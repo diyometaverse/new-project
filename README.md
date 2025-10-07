@@ -34,24 +34,24 @@ A simple guide to clone and run this project locally using **VSCode**.
             <img width="418" height="440" alt="image" src="https://github.com/user-attachments/assets/15ba738b-cd6e-4934-9f3d-7b569d3b80a3" />
 
 
-# 🐍 2. Set Up Python Virtual Environment
+# 🐍 3. Set Up Python Virtual Environment
 Run run:
  ```bash
   python -m venv venv/VENV_NAME
 ```
 
-# 🧪 3. Activate the Virtual Environment
+# 🧪 4. Activate the Virtual Environment
 Windows:
   ```bash
   source VENV_NAME\Scripts\activate
 ```
 
-# 📂 4. Navigate to the App Directory
+# 📂 5. Navigate to the App Directory
  ```bash
 cd moodmate/MAIN PROJECT WITH SETTINGS.PY
 ```
 
-# 🚀 5. Run the Server
+# 🚀 6. Run the Server
 ```bash
 python manage.py runserver
 ```

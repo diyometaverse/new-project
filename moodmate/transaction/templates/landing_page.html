@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Order System - Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f5f6fa;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 60px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        padding: 40px 30px;
+        text-align: center;
+      }
+      h1 {
+        color: #2d3436;
+        margin-bottom: 16px;
+      }
+      p {
+        color: #636e72;
+        margin-bottom: 32px;
+      }
+      .btn {
+        background: #0984e3;
+        color: #fff;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 6px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn:hover {
+        background: #74b9ff;
+      }
+      .features {
+        margin: 40px 0 0 0;
+        text-align: left;
+      }
+      .features li {
+        margin-bottom: 12px;
+        color: #636e72;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to MoodMate Ordering System</h1>
+      <p>
+        Order your favorite items quickly and easily. Fast, secure, and reliable
+        ordering for everyone.
+      </p>
+      <a href="{% url 'transaction:dashboard' %}" class="btn"
+        >Go to Dashboard</a
+      >
+      <a href="{% url 'ordering:list' %}" class="btn">Go to Ordering List</a>
+      <ul class="features">
+        <li>✔ Simple and intuitive interface</li>
+        <li>✔ Real-time order tracking</li>
+        <li>✔ Secure payment options</li>
+        <li>✔ Friendly customer support</li>
+      </ul>
+    </div>
+  </body>
+</html>

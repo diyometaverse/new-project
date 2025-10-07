@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 32px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      h1 {
+        margin-bottom: 24px;
+        color: #333;
+      }
+      .stats {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+      .card {
+        flex: 1;
+        background: #f9fafb;
+        padding: 24px;
+        border-radius: 6px;
+        text-align: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 2em;
+        color: #007bff;
+      }
+      .card p {
+        margin: 0;
+        color: #555;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 24px;
+      }
+      th,
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+      th {
+        background: #f1f3f6;
+        color: #444;
+      }
+      tr:hover {
+        background: #f9f9fc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dashboard</h1>
+      <div class="stats">
+        <div class="card">
+          <h2>{{ total_transactions }}</h2>
+          <p>Total Transactions</p>
+        </div>
+        <div class="card">
+          <h2>{{ total_income }}</h2>
+          <p>Total Income</p>
+        </div>
+        <div class="card">
+          <h2>{{ total_expense }}</h2>
+          <p>Total Expense</p>
+        </div>
+      </div>
+      <h2>Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Timestamp</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for transaction in transactions %}
+          <tr>
+            <td>{{ transaction.user.first_name }}</td>
+            <td>{{ transaction.timestamp }}</td>
+            <td>{{ transaction.amount }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2">No transactions found.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'transaction:add_transaction' %}">
+        <button
+          style="
+            margin-top: 24px;
+            padding: 10px 24px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          Add Transaction
+        </button>
+      </a>
+    </div>
+  </body>
+</html>
